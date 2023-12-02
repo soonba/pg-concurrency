@@ -9,7 +9,8 @@ export class AppService {
     @InjectRepository(MemberEntity)
     private readonly memberRepository: Repository<MemberEntity>,
   ) {}
-  getHello(): string {
+  async getHello(): Promise<string> {
+    const memberEntities = await this.memberRepository.find();
     return 'Hello World!';
   }
 }
