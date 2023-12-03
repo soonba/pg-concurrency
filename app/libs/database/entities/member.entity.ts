@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { TeamEntity } from './team.entity';
+import { GetMembersResponse } from 'src/member/interface/member.interface';
 
 @Entity('member')
 export class MemberEntity {
@@ -20,4 +21,12 @@ export class MemberEntity {
   })
   @JoinColumn({ name: 'team_id' })
   team: TeamEntity;
+
+  toResponse(): GetMembersResponse {
+    return {
+      memberId: this.memberId,
+      name: this.name,
+      teamName: this.team.name,
+    };
+  }
 }

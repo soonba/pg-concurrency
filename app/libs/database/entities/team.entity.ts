@@ -7,7 +7,7 @@ export class TeamEntity {
   teamId: string;
 
   @Column('varchar', { name: 'name' })
-  email: string;
+  name: string;
 
   @OneToMany(() => MemberEntity, (member) => member.team)
   members: MemberEntity[];
