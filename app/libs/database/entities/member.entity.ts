@@ -10,7 +10,7 @@ import { GetMembersResponse } from 'src/member/interface/member.interface';
 
 @Entity('member')
 export class MemberEntity {
-  @PrimaryGeneratedColumn('uuid', { name: 'member_id' })
+  @PrimaryGeneratedColumn('increment', { name: 'member_id' })
   memberId: string;
 
   @Column('varchar', { name: 'name' })

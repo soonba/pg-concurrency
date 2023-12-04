@@ -4,7 +4,7 @@ import { join } from 'path';
 
 const typeormModuleConfiguration = TypeOrmModule.forRoot({
   type: 'postgres',
-  host: 'localhost',
+  host: '_postgres',
   port: 5432,
   username: 'postgres',
   password: 'postgres',

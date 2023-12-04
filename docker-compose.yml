@@ -13,7 +13,21 @@ services:
       - POSTGRES_DB=employee
     volumes:
       - pg_data:/var/lib/postgresql/data
-    container_name: 'postgres'
+    container_name: '_postgres'
+
+  mysql:
+    image: mysql:8.0
+    networks:
+      - concurrent
+    ports:
+      - 3307:3306
+    container_name: 'mysql'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+    platform: linux/x86_64
 
   app:
     build:
@@ -32,3 +46,4 @@ networks:
 
 volumes:
   pg_data:
+  mysql_data:

@@ -8,10 +8,10 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
         columns: [
           {
             name: 'member_id',
-            type: 'uuid',
+            type: 'int',
             isGenerated: true,
             isPrimary: true,
-            generationStrategy: 'uuid',
+            generationStrategy: 'increment',
             comment: '멤버 ID',
           },
           {
@@ -22,7 +22,7 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
           },
           {
             name: 'team_id',
-            type: 'uuid',
+            type: 'int',
             comment: '팀 ID',
           },
         ],
@@ -34,10 +34,10 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
         columns: [
           {
             name: 'team_id',
-            type: 'uuid',
+            type: 'int',
             isGenerated: true,
             isPrimary: true,
-            generationStrategy: 'uuid',
+            generationStrategy: 'increment',
             comment: '팀 ID',
           },
           {

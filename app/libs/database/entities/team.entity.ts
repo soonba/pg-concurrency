@@ -3,7 +3,7 @@ import { MemberEntity } from './member.entity';
 
 @Entity('team')
 export class TeamEntity {
-  @PrimaryGeneratedColumn('uuid', { name: 'team_id' })
+  @PrimaryGeneratedColumn('increment', { name: 'team_id' })
   teamId: string;
 
   @Column('varchar', { name: 'name' })
