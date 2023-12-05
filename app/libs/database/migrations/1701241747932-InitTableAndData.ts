@@ -21,6 +21,11 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
             comment: '멤버 이름',
           },
           {
+            name: 'age',
+            type: 'int',
+            comment: '나이',
+          },
+          {
             name: 'team_id',
             type: 'int',
             comment: '팀 ID',
@@ -56,24 +61,23 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
     ('A'),('B'),('C')
     returning team_id
     `);
-    console.log(result);
     await queryRunner.query(`
     insert into member
-    (name, team_id)
+    (name, age, team_id)
     values
-    ('김','${result[0].team_id}'),
-    ('이','${result[0].team_id}'),
-    ('박','${result[0].team_id}'),
-    ('정','${result[0].team_id}'),
-    ('강','${result[0].team_id}'),
-    ('조','${result[0].team_id}'),
-    ('윤','${result[0].team_id}'),
-    ('장','${result[0].team_id}'),
-    ('임','${result[0].team_id}'),
-    ('한','${result[1].team_id}'),
-    ('오','${result[1].team_id}'),
-    ('서','${result[1].team_id}'),
-    ('신','${result[2].team_id}')`);
+    ('김',29,'1'),
+    ('이',21,'1'),
+    ('박',34,'1'),
+    ('정',41,'1'),
+    ('강',13,'1'),
+    ('조',26,'1'),
+    ('윤',7,'1'),
+    ('장',18,'1'),
+    ('임',59,'1'),
+    ('한',13,'2'),
+    ('오',30,'2'),
+    ('서',33,'2'),
+    ('신',35,'3')`);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
