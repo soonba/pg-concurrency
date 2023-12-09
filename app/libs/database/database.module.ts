@@ -3,13 +3,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 
 const typeormModuleConfiguration = TypeOrmModule.forRoot({
-  type: 'postgres',
-  host: 'postgres',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
+  type: 'mysql',
+  host: 'mysql',
+  port: 3306,
+  username: 'root',
+  password: 'root',
   database: 'employee',
-  schema: 'public',
   keepConnectionAlive: true,
   entities: [join(__dirname, 'entities/*.entity.{js,ts}')],
   migrations: [join(__dirname, 'migrations/*.{js,ts}')],

@@ -59,7 +59,6 @@ export class InitTableAndData1701241747932 implements MigrationInterface {
     (name)
     values
     ('A'),('B'),('C')
-    returning team_id
     `);
     await queryRunner.query(`
     insert into member
