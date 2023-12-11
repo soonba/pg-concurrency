@@ -4,8 +4,8 @@ import { join } from 'path';
 
 const typeormModuleConfiguration = TypeOrmModule.forRoot({
   type: 'mysql',
-  host: 'mysql',
-  port: 3306,
+  host: 'a_mysql',
+  port: 3307,
   username: 'root',
   password: 'root',
   database: 'employee',

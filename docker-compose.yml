@@ -20,8 +20,8 @@ services:
     networks:
       - concurrent
     ports:
-      - 3306:3306
-    container_name: 'mysql'
+      - 3307:3306
+    container_name: 'a_mysql'
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
